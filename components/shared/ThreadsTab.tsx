@@ -1,4 +1,4 @@
-import { fetchUserPosts } from '@/lib/actions/thread.actions';
+import { fetchUserPosts } from '@/lib/actions/user.actions';
 import { redirect } from 'next/navigation';
 import React from 'react'
 import ThreadCard from '../cards/ThreadCard';
@@ -14,7 +14,9 @@ const ThreadsTab = async ({ currentUserId, accountId, accountType }: Props) => {
     // TODO: Fetch Profile Threads
     let result = await fetchUserPosts(accountId);
 
-    if(!result) redirect('/');
+    if(!result) {
+      redirect('/');
+    }
 
   return (
     <section className='mt-9 flex flex-col gap-10'>
