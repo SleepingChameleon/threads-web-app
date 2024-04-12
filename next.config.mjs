@@ -29,6 +29,9 @@ const nextConfig = {
         },
       ],
     },
+    serverless: {
+      maxDuration: 30
+    }
   };
   
 export default nextConfig;
